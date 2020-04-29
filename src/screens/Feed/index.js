@@ -2,25 +2,14 @@ import React from 'react';
 
 import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
-import options from '../../../assets/options.png'
-import like from '../../../assets/like.png'
-import comment from '../../../assets/comment.png'
-import send from '../../../assets/send.png'
-import save from '../../../assets/save.png'
-
 function Feed() {
 
     const posts = [
         { id: 1, picture_url: 'https://osegredo.com.br/wp-content/uploads/2019/12/A-mulher-que-se-aceita01-870x470.jpg', place: "California", likes: ['xupim', 'amora', 'codi', 'afons_sa', 'padilhO', 'catu_ss'], description: 'Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras', hashtags: '', author: 'Devin' },
         { id: 2, picture_url: 'https://oamor.com.br/wp-content/uploads/2019/12/mulher-curejpg-870x470.jpg', place: "California", likes: ['xupim', 'amora', 'codi', 'afons_sa', 'padilhO', 'catu_ss'], description: 'Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras', hashtags: '', author: 'Dan' },
         { id: 3, picture_url: 'https://osegredo.com.br/wp-content/uploads/2019/12/A-mulher-que-se-aceita01-870x470.jpg', place: "California", likes: ['xupim', 'amora', 'codi', 'afons_sa', 'padilhO', 'catu_ss'], description: 'Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras', hashtags: '', author: 'Dominic' },
-        { id: 4, picture_url: 'https://osegredo.com.br/wp-content/uploads/2019/12/A-mulher-que-se-aceita01-870x470.jpg', place: "California", likes: ['xupim', 'amora', 'codi', 'afons_sa', 'padilhO', 'catu_ss'], description: 'Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras', hashtags: '', author: 'Jackson' },
-        { id: 5, picture_url: 'https://osegredo.com.br/wp-content/uploads/2019/12/A-mulher-que-se-aceita01-870x470.jpg', place: "California", likes: ['xupim', 'amora', 'codi', 'afons_sa', 'padilhO', 'catu_ss'], description: 'Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras', hashtags: '', author: 'James' },
-        { id: 6, picture_url: 'https://osegredo.com.br/wp-content/uploads/2019/12/A-mulher-que-se-aceita01-870x470.jpg', place: "California", likes: ['xupim', 'amora', 'codi', 'afons_sa', 'padilhO', 'catu_ss'], description: 'Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras', hashtags: '', author: 'Joel' },
-        { id: 7, picture_url: 'https://osegredo.com.br/wp-content/uploads/2019/12/A-mulher-que-se-aceita01-870x470.jpg', place: "California", likes: ['xupim', 'amora', 'codi', 'afons_sa', 'padilhO', 'catu_ss'], description: 'Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras', hashtags: '', author: 'John' },
-        { id: 8, picture_url: 'https://osegredo.com.br/wp-content/uploads/2019/12/A-mulher-que-se-aceita01-870x470.jpg', place: "California", likes: ['xupim', 'amora', 'codi', 'afons_sa', 'padilhO', 'catu_ss'], description: 'Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras', hashtags: '', author: 'Jillian' },
-        { id: 9, picture_url: 'https://oamor.com.br/wp-content/uploads/2019/12/mulher-curejpg-870x470.jpg', place: "California", likes: ['xupim', 'amora', 'codi', 'afons_sa', 'padilhO', 'catu_ss'], description: 'Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras', hashtags: '', author: 'Jimmy' },
-        { id: 10, picture_url: 'https://osegredo.com.br/wp-content/uploads/2019/12/A-mulher-que-se-aceita01-870x470.jpg', place: "California", likes: ['xupim', 'amora', 'codi', 'afons_sa', 'padilhO', 'catu_ss'], description: 'Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras', hashtags: '', author: 'Julie' },
+        { id: 4, picture_url: 'https://emais.estadao.com.br/blogs/mulheres-positivas/wp-content/uploads/sites/672/2019/01/832572F7-B636-48F1-B7AA-26D4A808C34C.jpeg', place: "California", likes: ['xupim', 'amora', 'codi', 'afons_sa', 'padilhO', 'catu_ss'], description: 'Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras', hashtags: '', author: 'Jackson' },
+        { id: 5, picture_url: 'https://ath2.unileverservices.com/wp-content/uploads/sites/2/2017/10/perfis-de-mulheres-com-cabelo-curto-no-instagram-6-740x439.jpg', place: "California", likes: ['xupim', 'amora', 'codi', 'afons_sa', 'padilhO', 'catu_ss'], description: 'Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras Muito bom essa viagem que posso nyitas outras', hashtags: '', author: 'James' },
     ]
 
     posts.forEach(element => {
@@ -37,7 +26,7 @@ function Feed() {
                     </View>
                     <View style={styles.postOptions}>
                         <TouchableOpacity>
-                            <Image source={options} />
+                            <Image source={require('../../../assets/options.png')} />
                         </TouchableOpacity>
                     </View>
 
@@ -49,19 +38,19 @@ function Feed() {
                     <View style={styles.actions}>
                         <View style={styles.leftActions}>
                             <TouchableOpacity style={styles.action}>
-                                <Image source={like} />
+                                <Image source={require('../../../assets/like.png')} />
                             </TouchableOpacity>
                             <TouchableOpacity style={styles.action}>
-                                <Image source={comment} />
+                                <Image source={require('../../../assets/comment.png')} />
                             </TouchableOpacity>
                             <TouchableOpacity style={styles.action}>
-                                <Image source={send} />
+                                <Image source={require('../../../assets/send.png')} />
                             </TouchableOpacity>
                         </View>
 
                         <View>
                             <TouchableOpacity style={styles.action}>
-                                <Image source={save} />
+                                <Image source={require('../../../assets/save.png')} />
                             </TouchableOpacity>
                         </View>
                     </View>

@@ -84,7 +84,7 @@ function Feed() {
         <View>
             <FlatList
                 data={posts}
-                keyExtractor={(item) => item.id}
+                keyExtractor={(item) => item.id.toString()}
                 renderItem={renderItem}
             />
         </View>

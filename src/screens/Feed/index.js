@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, SafeAreaView, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
+
+import { Avatar } from 'react-native-elements';
 
 function Feed() {
 
@@ -18,51 +20,64 @@ function Feed() {
 
     const renderItem = ({ item: post }) => {
         return (
-            <View style={styles.post}>
-                <View style={styles.postHeader}>
-                    <View style={styles.userInfo}>
-                        <Text style={styles.author}>{post.author}</Text>
-                        <Text style={styles.place}>{post.place}</Text>
-                    </View>
-                    <View style={styles.postOptions}>
-                        <TouchableOpacity>
-                            <Image source={require('../../../assets/options.png')} />
-                        </TouchableOpacity>
-                    </View>
+            <SafeAreaView>
 
-                </View>
-                <View >
-                    <Image style={styles.picture_url} source={{ uri: post.picture_url }} />
-                </View>
-                <View style={styles.footer}>
-                    <View style={styles.actions}>
-                        <View style={styles.leftActions}>
-                            <TouchableOpacity style={styles.action}>
-                                <Image source={require('../../../assets/like.png')} />
+                <View style={styles.post}>
+                    <View style={styles.postHeader}>
+                        <View style={styles.userInfo}>
+                            <View>
+                                <Avatar
+                                    containerStyle={{ marginRight: 8 }}
+                                    rounded
+                                    source={{ uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg' }}
+                                />
+                            </View>
+                            <View>
+                                <Text style={styles.author}>{post.author}</Text>
+                                <Text style={styles.place}>{post.place}</Text>
+                            </View>
+                        </View>
+                        <View >
+                            <TouchableOpacity>
+                                <Image source={require('../../../assets/options.png')} />
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.action}>
-                                <Image source={require('../../../assets/comment.png')} />
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.action}>
-                                <Image source={require('../../../assets/send.png')} />
-                            </TouchableOpacity>
+                        </View>
+
+                    </View>
+                    <View >
+                        <Image style={styles.picture_url} source={{ uri: post.picture_url }} />
+                    </View>
+                    <View style={styles.footer}>
+                        <View style={styles.actions}>
+                            <View style={styles.leftActions}>
+                                <TouchableOpacity style={styles.action}>
+                                    <Image source={require('../../../assets/like.png')} />
+                                </TouchableOpacity>
+                                <TouchableOpacity style={styles.action}>
+                                    <Image source={require('../../../assets/comment.png')} />
+                                </TouchableOpacity>
+                                <TouchableOpacity style={styles.action}>
+                                    <Image source={require('../../../assets/send.png')} />
+                                </TouchableOpacity>
+                            </View>
+
+                            <View>
+                                <TouchableOpacity style={styles.action}>
+                                    <Image source={require('../../../assets/save.png')} />
+                                </TouchableOpacity>
+                            </View>
                         </View>
 
                         <View>
-                            <TouchableOpacity style={styles.action}>
-                                <Image source={require('../../../assets/save.png')} />
-                            </TouchableOpacity>
+                            <Text style={styles.likeBy}>Curtido por <Text style={styles.like}>{post.likes} e outras pessoas</Text> </Text>
+                            <Text style={styles.author}>{post.author} <Text numberOfLines={1} style={styles.description}>{post.description.length < 65 ? post.description : post.description.substring(0, 65)}...</Text>  </Text>
                         </View>
                     </View>
 
-                    <View>
-                        <Text style={styles.likeBy}>Curtido por <Text style={styles.like}>{post.likes} e outras pessoas</Text> </Text>
-                        <Text style={styles.author}>{post.author} <Text numberOfLines={1} style={styles.description}>{post.description.length < 65 ? post.description : post.description.substring(0, 65)}...</Text>  </Text>
-                    </View>
-                </View>
 
+                </View >
+            </SafeAreaView>
 
-            </View >
         )
     }
 
@@ -108,6 +123,8 @@ const styles = StyleSheet.create({
         marginBottom: 15
     },
     userInfo: {
+        flexDirection: "row",
+
     },
     author: {
         color: '#000',

@@ -15,9 +15,9 @@ const MainNavigator = createStackNavigator({
         headerStyle: {
             backgroundColor: '#ededed',
         },
-        headerTitle: <Image source={require('../../assets/logo.png')} />,
-        headerLeft: <TouchableOpacity style={{ marginLeft: 15 }}><Image source={require('../../assets/camera.png')} /></TouchableOpacity>,
-        headerRight: <TouchableOpacity style={{ marginRight: 15 }}><Image source={require('../../assets/send.png')} /></TouchableOpacity>,
+        headerTitle: () => <Image source={require('../../assets/logo.png')} />,
+        headerLeft: () => <TouchableOpacity style={{ marginLeft: 15 }}><Image source={require('../../assets/camera.png')} /></TouchableOpacity>,
+        headerRight: () => <TouchableOpacity style={{ marginRight: 15 }}><Image source={require('../../assets/send.png')} /></TouchableOpacity>
     }
 })
 

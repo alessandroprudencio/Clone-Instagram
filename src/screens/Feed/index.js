@@ -21,7 +21,6 @@ function Feed() {
     const renderItem = ({ item: post }) => {
         return (
             <SafeAreaView>
-
                 <View style={styles.post}>
                     <View style={styles.postHeader}>
                         <View style={styles.userInfo}>

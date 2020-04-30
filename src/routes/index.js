@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-import { Image, TouchableOpacity, SafeAreaView, Text } from 'react-native';
+import { Image, TouchableOpacity } from 'react-native';
 
 import { createAppContainer } from 'react-navigation'
 
 import { createStackNavigator } from 'react-navigation-stack'
+
 
 import Feed from '../screens/Feed/index'
 
